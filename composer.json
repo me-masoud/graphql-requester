@@ -1,0 +1,22 @@
+{
+  "name": "me-masoud/graphql-requester",
+  "description": "request graphql",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Masoud Hosseini",
+      "email": "me.masoudhosseini@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "YourVendor\\YourPackageName\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^7.4",
+    "illuminate/support": "^8.0",
+    "guzzlehttp/guzzle": "^7.0.1"
+  }
+}
