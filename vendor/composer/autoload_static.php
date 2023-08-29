@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit02d5cca1c4d9bfc8aad60ff6cab258ea
 {
     public static $prefixLengthsPsr4 = array (
-        'Y' => 
+        'G' => 
         array (
-            'YourVendor\\YourPackageName\\' => 27,
+            'GraphqlRequester\\' => 17,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'YourVendor\\YourPackageName\\' => 
+        'GraphqlRequester\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

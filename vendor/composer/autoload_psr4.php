@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'YourVendor\\YourPackageName\\' => array($baseDir . '/src'),
+    'GraphqlRequester\\' => array($baseDir . '/src'),
 );
