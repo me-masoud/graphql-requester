@@ -16,5 +16,5 @@
             "email": "me.masoudhosseini@gmail.com"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
