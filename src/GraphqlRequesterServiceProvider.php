@@ -1,5 +1,6 @@
 <?php
 
+namespace GraphqlRequester;
 class GraphqlRequesterServiceProvider
 {
     public function boot()

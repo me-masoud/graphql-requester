@@ -18,15 +18,12 @@ class ComposerStaticInit02d5cca1c4d9bfc8aad60ff6cab258ea
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
         ),
-        'M' => 
-        array (
-            'Masoud\\GraphqlRequester\\' => 24,
-        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'GraphqlRequester\\' => 17,
         ),
     );
 
@@ -40,10 +37,6 @@ class ComposerStaticInit02d5cca1c4d9bfc8aad60ff6cab258ea
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
-        'Masoud\\GraphqlRequester\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
-        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -55,6 +48,10 @@ class ComposerStaticInit02d5cca1c4d9bfc8aad60ff6cab258ea
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'GraphqlRequester\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
