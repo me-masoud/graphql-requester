@@ -1,6 +1,6 @@
 {
   "name": "me-masoud/graphql-requester",
-  "description": "request graphql",
+  "description": "request graphql anywhere",
   "type": "library",
   "license": "MIT",
   "authors": [
