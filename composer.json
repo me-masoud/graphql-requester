@@ -12,7 +12,7 @@
   "minimum-stability": "dev",
   "autoload": {
     "psr-4": {
-      "YourVendor\\YourPackageName\\": "src/"
+      "GraphqlRequester\\Core\\": "src/"
     }
   },
   "require": {
