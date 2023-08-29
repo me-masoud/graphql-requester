@@ -6,22 +6,24 @@ class Query
     public function getTemplate(string $queryName, array $arguments = [], array $retrieves = []):string
     {
         $processedArguments = '';
+        $i = 0;
+        $length = count($arguments);
         foreach ($arguments as $key => $argument) {
-            $processedArguments .= ' '. $key . ':' . $argument . ', ';
+            $i++;
+            $processedArguments .= (' '. $key . ':' . $argument  );
+            if ($i  < $length) {
+                $processedArguments .= $i != $length ? ',' : '';
+            }
+
         }
         $retrieves = implode("\n" , $retrieves);
 
-        return sprintf(
-            "
-                query {
-                    %s(%s) {
-                    %s
+        $query =
+            "query { $queryName($processedArguments) {
+                    $retrieves
                 }
             }
-            ",
-            $queryName,
-            $processedArguments,
-            $retrieves
-        );
+            ";
+        return $query;
     }
 }
