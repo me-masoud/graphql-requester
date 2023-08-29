@@ -37,7 +37,7 @@ class Query
         $retrieves = implode("\n" , $retrieves);
         $processedArguments = $this->makeArguments($arguments);
         return
-            "query { $queryName . $processedArguments {
+            "query { $queryName  $processedArguments {
                     data{
                         $retrieves
                     }
