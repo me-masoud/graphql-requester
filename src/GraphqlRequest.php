@@ -6,9 +6,11 @@ use GuzzleHttp\Client;
 class GraphqlRequest
 {
     public function __construct(
-        public string $route
+        public null|string $route = null
     )
     {
+        if (!$this->route)
+            $this->route = config('graphql-requester.destination_url');;
     }
 
     public function query(string $queryName, array $arguments, array $retrieves)
