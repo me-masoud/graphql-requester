@@ -1,8 +1,10 @@
 {
     "name": "masoud/graphql-requester",
+    "description": "request graphql anywhere",
     "type": "library",
     "require": {
-        "guzzlehttp/guzzle": "7.8.x-dev"
+        "guzzlehttp/guzzle": "^7.3.0",
+        "php": "^7.3|^8.0"
     },
     "license": "MIT",
     "autoload": {
@@ -16,5 +18,5 @@
             "email": "me.masoudhosseini@gmail.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "dev"
 }
