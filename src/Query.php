@@ -3,7 +3,19 @@
 namespace GraphqlRequester\Factorial;
 class Query
 {
-    public function getTemplate(string $queryName, array $arguments = [], array $retrieves = []):string
+    public function getTemplateSingle(string $queryName, array $arguments = [], array $retrieves = []):string
+    {
+        $retrieves = implode("\n" , $retrieves);
+        $processedArguments = $this->makeArguments($arguments);
+        return
+            "query { $queryName($processedArguments) {
+                    $retrieves
+                }
+            }
+            ";
+    }
+
+    private function makeArguments(array $arguments = []): string
     {
         $processedArguments = '';
         $i = 0;
@@ -12,18 +24,24 @@ class Query
             $i++;
             $processedArguments .= (' '. $key . ':' . $argument  );
             if ($i  < $length) {
-                $processedArguments .= $i != $length ? ',' : '';
+                $processedArguments .= ',';
             }
 
         }
-        $retrieves = implode("\n" , $retrieves);
+        return $processedArguments;
+    }
 
-        $query =
+    public function getTemplateAll(string $queryName, array $arguments = [], array $retrieves = []):string
+    {
+        $retrieves = implode("\n" , $retrieves);
+        $processedArguments = $this->makeArguments($arguments);
+        return
             "query { $queryName($processedArguments) {
-                    $retrieves
+                    data{
+                        $retrieves
+                    }
                 }
             }
             ";
-        return $query;
     }
 }

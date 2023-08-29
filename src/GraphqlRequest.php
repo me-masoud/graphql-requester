@@ -13,10 +13,13 @@ class GraphqlRequest
             $this->route = config('graphql-requester.destination_url');;
     }
 
-    public function query(string $queryName, array $arguments, array $retrieves)
+    public function query(string $queryName, array $arguments, array $retrieves , string $type = 'all')
     {
         $query    = new Query();
-        $template = $query->getTemplate($queryName , $arguments , $retrieves);
+        if ($type != 'all')
+            $template = $query->getTemplateSingle($queryName , $arguments , $retrieves);
+        else
+            $template = $query->getTemplateAll($queryName , $arguments , $retrieves);
 
         $requestPayload = [
             'query' => $template,
@@ -34,16 +37,13 @@ class GraphqlRequest
                 ]
             );
 
-            $body = $response->getBody();
-            $data = json_decode($body, true);
-            return $data;
+            return json_decode($response->getBody(), true);
         }catch (\Exception $e) {
             throw $e;
         }
 
 
     }
-
 
     public function mutation()
     {
