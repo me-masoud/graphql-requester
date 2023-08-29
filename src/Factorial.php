@@ -1,7 +1,6 @@
 <?php
 
-namespace GraphqlRequester\Core;
-
+namespace GraphqlRequester\Factorial;
 class Factorial
 {
     public function calculate($number)

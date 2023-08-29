@@ -9,7 +9,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "GraphqlRequester\\": "src/"
+            "GraphqlRequester\\Factorial\\": "src/"
         }
     },
     "authors": [
