@@ -1,6 +1,6 @@
 <?php
 
-namespace GraphqlRequester\src\core;
+namespace GraphqlRequester\Core;
 
 class Factorial
 {

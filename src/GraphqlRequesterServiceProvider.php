@@ -9,7 +9,7 @@ class GraphqlRequesterServiceProvider
     public function register()
     {
         $this->app->bind('factorial', function () {
-            return new \GraphqlRequester\src\core\Factorial();
+            return new \GraphqlRequester\Core\Factorial();
         });
     }
 }
