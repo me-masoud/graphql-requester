@@ -28,7 +28,8 @@ class Query
             }
 
         }
-        return $processedArguments;
+
+        return $length < 1 ? '' : '(' . $processedArguments . ')';
     }
 
     public function getTemplateAll(string $queryName, array $arguments = [], array $retrieves = []):string
@@ -36,7 +37,7 @@ class Query
         $retrieves = implode("\n" , $retrieves);
         $processedArguments = $this->makeArguments($arguments);
         return
-            "query { $queryName($processedArguments) {
+            "query { $queryName . $processedArguments {
                     data{
                         $retrieves
                     }
