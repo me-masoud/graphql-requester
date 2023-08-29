@@ -3,7 +3,7 @@
 namespace GraphqlRequester\Factorial;
 use GuzzleHttp\Client;
 
-class Core
+class GraphqlRequest
 {
     public function __construct(
         public string $route
