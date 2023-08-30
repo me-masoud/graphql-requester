@@ -44,9 +44,34 @@ class GraphqlRequest
 
 
     }
-
-    public function mutation()
+    public function mutation(string $queryName, array $arguments, array $retrieves , string $type = 'all')
     {
+        $query    = new Mutation();
+
+        $template = $query->getTemplateCreate($queryName , $arguments , $retrieves);
+
+        $requestPayload = [
+            'query' => $template,
+            'variables' => null
+        ];
+        try {
+            $client = new Client();
+
+            $response =  $client->post($this->route,
+                [
+                    'json' => $requestPayload,
+                    'headers' => [
+                        'Content-Type' => 'application/json',
+                    ],
+                ]
+            );
+
+            return json_decode($response->getBody(), true);
+        }catch (\Exception $e) {
+            throw $e;
+        }
+
 
     }
+
 }
