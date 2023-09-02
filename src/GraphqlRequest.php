@@ -1,6 +1,7 @@
 <?php
 
-namespace GraphqlRequester\Factorial;
+namespace GraphqlRequester\Code;
+
 use GuzzleHttp\Client;
 
 class GraphqlRequest
@@ -41,18 +42,16 @@ class GraphqlRequest
         }catch (\Exception $e) {
             throw $e;
         }
-
-
     }
-    public function mutation(string $queryName, array $arguments, array $retrieves , string $type = 'all')
+    public function mutation(string $queryName, array $arguments, array|string $retrieves = null , $variable = null)
     {
         $query    = new Mutation();
+        $template = $query->getTemplateCreate($queryName , $arguments , $retrieves, $variable);
 
-        $template = $query->getTemplateCreate($queryName , $arguments , $retrieves);
 
         $requestPayload = [
             'query' => $template,
-            'variables' => null
+            'variables' => $variable
         ];
         try {
             $client = new Client();
@@ -65,13 +64,33 @@ class GraphqlRequest
                     ],
                 ]
             );
-
             return json_decode($response->getBody(), true);
         }catch (\Exception $e) {
             throw $e;
         }
+    }
 
+    public function raw($query, $variables = null)
+    {
+        $requestPayload = [
+            'query' => $query,
+            'variables' => $variables
+        ];
+        try {
+            $client = new Client();
 
+            $response =  $client->post($this->route,
+                [
+                    'json' => $requestPayload,
+                    'headers' => [
+                        'Content-Type' => 'application/json',
+                    ],
+                ]
+            );
+            return json_decode($response->getBody(), true);
+        }catch (\Exception $e) {
+            throw $e;
+        }
     }
 
 }

@@ -47,7 +47,7 @@ class ComposerStaticInit02d5cca1c4d9bfc8aad60ff6cab258ea
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
-            'GraphqlRequester\\Factorial\\' => 27,
+            'GraphqlRequester\\Code\\' => 22,
         ),
         'D' => 
         array (
@@ -124,7 +124,7 @@ class ComposerStaticInit02d5cca1c4d9bfc8aad60ff6cab258ea
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'GraphqlRequester\\Factorial\\' => 
+        'GraphqlRequester\\Code\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

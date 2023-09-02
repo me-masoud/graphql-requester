@@ -1,6 +1,6 @@
 <?php
 
-namespace GraphqlRequester\Factorial;
+namespace GraphqlRequester\Code;
 use Illuminate\Support\ServiceProvider;
 class GraphqlRequesterServiceProvider extends ServiceProvider
 {

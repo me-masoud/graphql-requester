@@ -1,6 +1,6 @@
 <?php
 
-namespace GraphqlRequester\Factorial;
+namespace GraphqlRequester\Code;
 class Mutation
 {
     public function getTemplateCreate(string $mutationName, array $arguments = [], array $retrieves = []):string

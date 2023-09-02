@@ -1,6 +1,6 @@
 <?php
 
-namespace GraphqlRequester\Factorial;
+namespace GraphqlRequester\Code;
 class Query
 {
     public function getTemplateSingle(string $queryName, array $arguments = [], array $retrieves = []):string
